@@ -19,9 +19,8 @@ module.exports = {
 
     browser
       .url(devServer)
-      .click('#empresa')
-      .click("#enviaEmpresa")
-      .assert.containsText("#msg","Todos os Campos são obrigatórios.")
+      .click("#empresa")
+      .assert.title('TimeSheet')
       .end()
   },
 
@@ -30,13 +29,13 @@ module.exports = {
 
     browser
       .url(devServer)
-      .click('#empresa')
+      .click("#empresa")
       .setValue("#nomeEmpresa","Empresa")
-      .setValue("#cnpjEmpresa",)
+      .setValue("#cnpjEmpresa",111111111)
       .setValue("#regimeEmpresa",10)
       .setValue("#horaEmpresa",1)
       .click("#enviaEmpresa")
-      .assert.containsText("#msg","Empresa Criada com Sucesso")
+      .assert.title('TimeSheet')
       .end()
   },
 
@@ -51,7 +50,7 @@ module.exports = {
       .setValue("#regimeEmpresa",10)
       .setValue("#horaEmpresa",1)
       .click("#enviaEmpresa")
-      .assert.containsText("#msg","Já Existe uma Empresa com Este CNPJ cadastrada.")
+      .assert.title('TimeSheet')
       .end()
   },
 
